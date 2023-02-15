@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <title>Upload Files</title>
+    <!-- Custom Css start -->
+    <style>
+        .container{
+            padding: 30px;
+            width: 50%; 
+            background-color: lightgrey;
+        }
+        .d-block{
+            display: block;
+        }
+        .errorMsg{
+            display: none;
+        }
+    </style>
+    <!-- Custom Css  -->
+</head>
+<body>
+    <!-- Container start -->
+        <div class="container width = 50% d-flex align-items-center justify-content-center flex-column my-5 border">
+        <!-- Heading start -->
+        <div class="h1 mt-2 mb-5">Upload Your Files</div>
+        <!-- Heading end -->
+        <!-- Form start -->
+        <form action="#">
+            <!-- Container for one file input start -->
+            <div id="divContainer">
+                <!-- One file input start -->
+                <div class="m-2" id="div">
+                    <div class="d-flex">
+                        <label for="file"></label>
+                        <!-- File input -->
+                        <input type="file" id="file" onchange="selectedFile()">
+                        <!-- Upload button -->
+                        <button class="btn btn-primary" onclick="checkForFile(event, event.target.parentNode.parentNode, event.target, fileUpload = false)">Upload</button>
+                        <!-- Add file button -->
+                        <span><button class="btn btn-primary mx-2" onclick="addFileOption(event, event.target.parentNode.parentNode)">+</button></span>
+                        <!-- Remove file button -->
+                        <span><button class="btn btn-danger mx-2" onclick="removeFileOption(event.target.parentNode.parentNode.parentNode)">x</button></span>
+                    </div>
+                    <!-- for error messages like '*File missing' or '*Only .docx, .csv, .xlsx, .pdf files allowed!' -->
+                    <span class="text-danger none errorMsg"></span></br>
+                </div>
+                <!-- One file input end -->
+            </div>
+            <!-- Container for one file input start -->
+            <!-- submit button -->
+            <button class="btn btn-primary m-2" id="submit">Submit</button>
+        </form>
+        <!-- Form end -->
+    </div>
+    <!-- Container end -->
+    <!-- Custom script start -->
+    <script src="./index.js"></script>
+    <!-- Custom script end -->
+    <!-- Bootstrap script start -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+    <!-- Bootstrap script end -->
+</body>
+</html>
